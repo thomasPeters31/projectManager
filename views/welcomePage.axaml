@@ -13,12 +13,20 @@
         <Button
             Width="200"
             Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Click="Login_Click"
-            Content="Login" />
+            Content="Login"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
         <Button
             Width="200"
             Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Click="Register_Click"
-            Content="Register" />
+            Content="Register" 
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"/>
     </StackPanel>
 </UserControl>
