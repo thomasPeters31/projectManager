@@ -1,0 +1,24 @@
+<UserControl
+    x:Class="projectManager.views.welcomePage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Spacing="20">
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="28"
+            Text="Welcome to Project Manager" />
+        <Button
+            Width="200"
+            Height="50"
+            Click="Login_Click"
+            Content="Login" />
+        <Button
+            Width="200"
+            Height="50"
+            Click="Register_Click"
+            Content="Register" />
+    </StackPanel>
+</UserControl>

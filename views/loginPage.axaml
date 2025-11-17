@@ -1,0 +1,26 @@
+<UserControl
+    x:Class="projectManager.views.loginPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Spacing="10">
+        <TextBlock
+            HorizontalAlignment="Center"
+            FontSize="24"
+            Text="Login" />
+        <TextBox
+            x:Name="UsernameBox"
+            Width="200"
+            Watermark="Username" />
+        <TextBox
+            x:Name="PasswordBox"
+            Width="200"
+            Watermark="Password" />
+        <Button
+            Width="200"
+            Click="LoginButton_Click"
+            Content="Login" />
+    </StackPanel>
+</UserControl>
