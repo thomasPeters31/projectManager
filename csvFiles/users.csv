@@ -1,0 +1,4 @@
+id,name,password,role
+1,thomas,12345,admin
+2,sarah,67890,student
+3,jon,abcde,teacher

@@ -1,0 +1,20 @@
+<UserControl
+    x:Class="projectManager.views.dashboardPage"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock FontSize="24" Text="{Binding Category} Tasks" />
+        <DataGrid
+            Height="400"
+            AutoGenerateColumns="False"
+            Items="{Binding Tasks}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" />
+                <DataGridTextColumn Binding="{Binding Description}" Header="Description" />
+                <DataGridTextColumn Binding="{Binding DueDate}" Header="Due Date" />
+                <DataGridTextColumn Binding="{Binding Status}" Header="Status" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

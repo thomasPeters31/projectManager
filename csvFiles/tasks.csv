@@ -1,0 +1,3 @@
+id,title,description,category,assigned_to,assigned_by,due_date,status,progress
+1,Math Homework #3,Complete exercises 5-10,Homework,sarah,jon,2025-11-20,Pending,0
+2,Gym Routine,Run 3km,Gym,sarah,sarah,2025-11-18,In Progress,50
