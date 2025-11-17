@@ -6,7 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace ProjectManager.services
+namespace ProjectManager
 {
     // User model
     public class User
@@ -18,7 +18,7 @@ namespace ProjectManager.services
     }
 
     // Task model
-    public class TaskItem
+    public class taskItem
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -31,7 +31,7 @@ namespace ProjectManager.services
         public int Progress { get; set; } // 0-100
     }
 
-    public class CsvService
+    public class csvCommands
     {
         private readonly string usersFile = "users.csv";
         private readonly string tasksFile = "tasks.csv";
@@ -49,7 +49,7 @@ namespace ProjectManager.services
             return csv.GetRecords<User>().ToList();
         }
 
-        public void AddUser(User user)
+        public void addUser(User user)
         {
             var users = LoadUsers();
             user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
@@ -61,7 +61,7 @@ namespace ProjectManager.services
         }
 
         // ---------------- TASKS ----------------
-        public List<TaskItem> LoadTasks()
+        public List<taskItem> loadTasks()
         {
             if (!File.Exists(tasksFile))
             {
@@ -70,12 +70,12 @@ namespace ProjectManager.services
 
             using var reader = new StreamReader(tasksFile);
             using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-            return csv.GetRecords<TaskItem>().ToList();
+            return csv.GetRecords<taskItem>().ToList();
         }
 
-        public void AddTask(TaskItem task)
+        public void addTask(taskItem task)
         {
-            var tasks = LoadTasks();
+            var tasks = loadTasks();
             task.Id = tasks.Count > 0 ? tasks.Max(t => t.Id) + 1 : 1;
             tasks.Add(task);
 
@@ -84,9 +84,9 @@ namespace ProjectManager.services
             csv.WriteRecords(tasks);
         }
 
-        public void UpdateTaskStatus(int taskId, string newStatus)
+        public void updateTaskStatus(int taskId, string newStatus)
         {
-            var tasks = LoadTasks();
+            var tasks = loadTasks();
             var task = tasks.FirstOrDefault(t => t.Id == taskId);
             if (task != null)
             {
@@ -98,9 +98,9 @@ namespace ProjectManager.services
             }
         }
 
-        public void UpdateTaskProgress(int taskId, int progress)
+        public void updateTaskProgress(int taskId, int progress)
         {
-            var tasks = LoadTasks();
+            var tasks = loadTasks();
             var task = tasks.FirstOrDefault(t => t.Id == taskId);
             if (task != null)
             {
