@@ -36,7 +36,7 @@ namespace projectManager.views
             // Load tasks filtered by category
             var allTasks = _csvService.loadTasks();
             var filteredTasks = allTasks
-                .Where(t => t.Category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
+                .Where(t => t.category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
             // Create a new dashboard page and pass tasks

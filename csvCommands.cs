@@ -11,37 +11,37 @@ namespace ProjectManager
     // User model
     public class User
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; } // "Student" or "Teacher"
+        public int id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string role { get; set; } // "Student" or "Teacher"
     }
 
     // Task model
     public class taskItem
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Category { get; set; } // Homework, Gym, Chores, etc.
-        public string AssignedTo { get; set; }
-        public string AssignedBy { get; set; }
-        public DateTime DueDate { get; set; }
-        public string Status { get; set; } // Pending, InProgress, Completed
-        public int Progress { get; set; } // 0-100
+        public int id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string category { get; set; } // Homework, Gym, Chores, etc.
+        public string assignedTo { get; set; }
+        public string assignedBy { get; set; }
+        public DateTime dueDate { get; set; }
+        public string status { get; set; } // Pending, InProgress, Completed
+        public int progress { get; set; } // 0-100
     }
 
     public class csvCommands
     {
-        private readonly string usersFile = "users.csv";
-        private readonly string tasksFile = "tasks.csv";
+        private readonly string usersFile = "/csvFiles/users.csv";
+        private readonly string tasksFile = "/csvFiles/tasks.csv";
 
         // ---------------- USERS ----------------
-        public List<User> LoadUsers()
+        public List<User> loadUsers()
         {
             if (!File.Exists(usersFile))
             {
-                File.WriteAllText(usersFile, "Id,Username,Password,Role\n");
+                File.WriteAllText(usersFile, "id,username,password,role\n");
             }
 
             using var reader = new StreamReader(usersFile);
@@ -51,8 +51,8 @@ namespace ProjectManager
 
         public void addUser(User user)
         {
-            var users = LoadUsers();
-            user.Id = users.Count > 0 ? users.Max(u => u.Id) + 1 : 1;
+            var users = loadUsers();
+            user.id = users.Count > 0 ? users.Max(u => u.id) + 1 : 1;
             users.Add(user);
 
             using var writer = new StreamWriter(usersFile);
@@ -65,7 +65,7 @@ namespace ProjectManager
         {
             if (!File.Exists(tasksFile))
             {
-                File.WriteAllText(tasksFile, "Id,Title,Description,Category,AssignedTo,AssignedBy,DueDate,Status,Progress\n");
+                File.WriteAllText(tasksFile, "id,title,description,category,assignedTo,assignedBy,dueDate,status,progress\n");
             }
 
             using var reader = new StreamReader(tasksFile);
@@ -76,7 +76,7 @@ namespace ProjectManager
         public void addTask(taskItem task)
         {
             var tasks = loadTasks();
-            task.Id = tasks.Count > 0 ? tasks.Max(t => t.Id) + 1 : 1;
+            task.id = tasks.Count > 0 ? tasks.Max(t => t.id) + 1 : 1;
             tasks.Add(task);
 
             using var writer = new StreamWriter(tasksFile);
@@ -87,10 +87,10 @@ namespace ProjectManager
         public void updateTaskStatus(int taskId, string newStatus)
         {
             var tasks = loadTasks();
-            var task = tasks.FirstOrDefault(t => t.Id == taskId);
+            var task = tasks.FirstOrDefault(t => t.id == taskId);
             if (task != null)
             {
-                task.Status = newStatus;
+                task.status = newStatus;
 
                 using var writer = new StreamWriter(tasksFile);
                 using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
@@ -101,10 +101,10 @@ namespace ProjectManager
         public void updateTaskProgress(int taskId, int progress)
         {
             var tasks = loadTasks();
-            var task = tasks.FirstOrDefault(t => t.Id == taskId);
+            var task = tasks.FirstOrDefault(t => t.id == taskId);
             if (task != null)
             {
-                task.Progress = progress;
+                task.progress = progress;
 
                 using var writer = new StreamWriter(tasksFile);
                 using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);

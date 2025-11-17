@@ -1,30 +1,26 @@
 using Avalonia.Controls;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using projectManager.views;
 using ProjectManager;
 
 namespace projectManager.views
 {
     public partial class dashboardPage : UserControl
     {
-        public ObservableCollection<taskItem> Tasks { get; set; }
-        public string Category { get; set; }
+        public ObservableCollection<taskItem> tasks { get; set; }
+        public string category { get; set; }
 
-        private readonly mainWindow _mainWindow;
+        private readonly mainWindow mainWindow;
 
-        public dashboardPage(mainWindow mainWindow, List<taskItem> tasks)
+        public dashboardPage(mainWindow mainWindow, List<taskItem> filteredTasks)
         {
             InitializeComponent();
-            _mainWindow = mainWindow;
+            this.mainWindow = mainWindow;
 
-            Tasks = new ObservableCollection<taskItem>(tasks);
-            if (tasks.Count > 0)
-                Category = tasks[0].Category;
-            else
-                Category = "No Tasks";
+            tasks = new ObservableCollection<taskItem>(filteredTasks);
+            category = filteredTasks.Count > 0 ? filteredTasks[0].category : "No Tasks";
 
-            DataContext = this;
+            DataContext = this; // Required for binding
         }
     }
 }

@@ -6,3 +6,6 @@
 /Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/projectManager.AssemblyInfo.cs
 /Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/projectManager.csproj.CoreCompileInputs.cache
 /Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/projectManager.sourcelink.json
+/Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/projectManager.dll
+/Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/refint/projectManager.dll
+/Users/UNI/MyProjects/projectManager/obj/Debug/net10.0/projectManager.pdb
