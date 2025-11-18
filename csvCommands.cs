@@ -20,7 +20,7 @@ namespace ProjectManager
     // Task model
     public class taskItem
     {
-        public int id { get; set; }
+        public int iD { get; set; }
         public string title { get; set; }
         public string description { get; set; }
         public string category { get; set; } // Homework, Gym, Chores, etc.
@@ -76,7 +76,7 @@ namespace ProjectManager
         public void addTask(taskItem task)
         {
             var tasks = loadTasks();
-            task.id = tasks.Count > 0 ? tasks.Max(t => t.id) + 1 : 1;
+            task.iD = tasks.Count > 0 ? tasks.Max(t => t.iD) + 1 : 1;
             tasks.Add(task);
 
             using var writer = new StreamWriter(tasksFile);
@@ -87,7 +87,7 @@ namespace ProjectManager
         public void updateTaskStatus(int taskId, string newStatus)
         {
             var tasks = loadTasks();
-            var task = tasks.FirstOrDefault(t => t.id == taskId);
+            var task = tasks.FirstOrDefault(t => t.iD == taskId);
             if (task != null)
             {
                 task.status = newStatus;
@@ -101,7 +101,7 @@ namespace ProjectManager
         public void updateTaskProgress(int taskId, int progress)
         {
             var tasks = loadTasks();
-            var task = tasks.FirstOrDefault(t => t.id == taskId);
+            var task = tasks.FirstOrDefault(t => t.iD == taskId);
             if (task != null)
             {
                 task.progress = progress;

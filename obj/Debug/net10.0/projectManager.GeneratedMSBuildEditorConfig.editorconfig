@@ -29,9 +29,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [/Users/UNI/MyProjects/projectManager/mainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[/Users/UNI/MyProjects/projectManager/views/dashboardPage.axaml]
-build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
-
 [/Users/UNI/MyProjects/projectManager/views/homePage.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

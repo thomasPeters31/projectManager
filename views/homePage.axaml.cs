@@ -39,9 +39,7 @@ namespace projectManager.views
                 .Where(t => t.category.Equals(category, System.StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
-            // Create a new dashboard page and pass tasks
-            var dashboard = new dashboardPage(_mainWindow, filteredTasks);
-            _mainWindow.MainContent.Content = dashboard; // Assuming MainContent is a ContentControl in mainWindow
+            
         }
     }
 }
