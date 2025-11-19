@@ -1,0 +1,13 @@
+<UserControl
+    x:Class="projectManager.views.personalProjectsPage"
+    xmlns="https://github.com/avaloniaui/"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <StackPanel Margin="20">
+        <TextBlock Text="Personal Projects" FontSize="24" Margin="0 0 0 10"/>
+
+        <DataGrid x:Name="projectsGrid" AutoGenerateColumns="True" />
+    </StackPanel>
+
+</UserControl>

@@ -17,8 +17,8 @@ namespace projectManager.views
             _csvService = new csvCommands(); // <-- updated to match your class
 
             // Hook up button clicks
-            PersonalButton.Click += personalButton_Click;
-            SchoolButton.Click += schoolButton_Click;
+            personalButton.Click += personalButton_Click;
+            schoolButton.Click += schoolButton_Click;
         }
 
         private void personalButton_Click(object? sender, RoutedEventArgs e)

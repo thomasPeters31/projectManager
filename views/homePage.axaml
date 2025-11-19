@@ -1,6 +1,6 @@
 <UserControl
     x:Class="projectManager.views.homePage"
-    xmlns="https://github.com/avaloniaui"
+    xmlns="https://github.com/avaloniaui/"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <StackPanel
@@ -23,12 +23,12 @@
             Orientation="Horizontal"
             Spacing="20">
             <Button
-                Name="PersonalButton"
+                Name="personalButton"
                 Width="120"
                 Height="40"
                 Content="Personal" />
             <Button
-                Name="SchoolButton"
+                Name="schoolButton"
                 Width="120"
                 Height="40"
                 Content="School" />

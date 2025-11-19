@@ -65,7 +65,7 @@ namespace ProjectManager
         {
             if (!File.Exists(tasksFile))
             {
-                File.WriteAllText(tasksFile, "id,title,description,category,assignedTo,assignedBy,dueDate,status,progress\n");
+                File.WriteAllText(tasksFile, "id,type,title,description,category,assignedTo,assignedBy,dueDate,status,progress\n");
             }
 
             using var reader = new StreamReader(tasksFile);
